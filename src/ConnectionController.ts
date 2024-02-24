@@ -87,6 +87,8 @@ export class ConnectionController extends ConnectionModel {
 		const isAddedEmoji = message.event === Events.MessageReactionAdd;
 		isSelectedEmojiValid && isAddedEmoji && isMemberValid
 			? member?.roles.add(this.testerRoleId)
+			: isAddedEmoji
+			? null
 			: member?.roles.remove(this.testerRoleId);
 		isSelectedEmojiValid ? null : message.reaction.remove();
 	}
