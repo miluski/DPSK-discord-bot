@@ -2,9 +2,10 @@
   "name": "dpsk-bot",
   "version": "1.0.0",
   "description": "DPSK discord bot for automatization",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "startApp": "tsc && node src/index.js"
   },
   "keywords": [
     "dpsk",
