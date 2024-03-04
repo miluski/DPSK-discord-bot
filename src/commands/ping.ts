@@ -13,7 +13,7 @@ export class PingCommand {
 				{
 					title: "Pong!",
 					description: `Aktualne opóźnienie wynosi: ${
-						this.interaction.createdTimestamp - receivedTimestamp
+						receivedTimestamp - this.interaction.createdTimestamp
 					} ms`,
 					color: 0xff0000,
 				},

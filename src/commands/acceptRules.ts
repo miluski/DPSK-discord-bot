@@ -11,24 +11,24 @@ export class AcceptRulesCommand {
 	private readonly rulesArray: Array<Rule> = [
 		{
 			name: "Zasada 1",
-			value: "Masz problem? To zapomnij o tym, już go nie masz",
+			value: "Wszystko co znajduje się na obrębie tego discorda w postaci tekstowej lub wypowiedzianej głosowo pozostaje na tym discordzie. W przypadku złamania danej zasady zostaną wyciągnięte odpowiednie konsekwencje.",
 		},
 		{
 			name: "Zasada 2",
-			value: "Znalazłeś buga? To twój telefon źle działa, nie aplikacja",
+			value: "Do raportowania problemów lub propozycji służy komenda /createticket. Developerzy zastrzegają sobie prawo do odrzucenia nowego zgłoszenia inaczej ticketu bez podania powodu.",
 		},
 		{
 			name: "Zasada 3",
-			value: "👑Android > IOS🤮",
+			value: "Obecność jest obowiązkowa dla wszystkich testerów na zebraniach ustalonych wspólnie z developerami. Jeśli przyszliście tutaj sobie odpalić raz apkę i nic w niej nie zrobić to równie dobrze możecie opuścić tego discorda.",
 		},
 		{
 			name: "Zasada 4",
 			value:
-				"Jeśli pani dyrektor nie dać mudzina premia to mudzina wszczonć bunt",
+				"Oferty pomocy przy developie aplikacji będą z reguły odrzucane - team developerski został wybrany na samym początku tworzenia aplikacji i na tym etapie jej rozwoju wolimy nie wpuszczać w swoje szeregi nowych osób. Jednakże, nie wykluczamy opcji przyjęcia kogoś nowego do grona.",
 		},
 		{
 			name: "Zasada 5",
-			value: "TheFilips nubuje",
+			value: "Konieczność stosowania się do powyższych zasad wchodzi w życie zaraz po ich akceptacji i automatycznym otrzymaniu roli Testera. Za złamanie którejkolwiek zasad grożą srogie konsekwencje np.: w postaci usunięcia z grona testerów",
 		},
 		{
 			name: `Aby zaakceptować powyższe zasady i otrzymać rolę testera, zareaguj na tę wiadomość za pomocą reakcji ${this.approveIconId}`,
