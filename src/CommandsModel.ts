@@ -13,12 +13,17 @@ export class CommandsModel {
 		{
 			name: "acceptrules",
 			description:
-				"Komenda wysyłająca wiadomość umożliwiającą akceptację zasad",
+				"Komenda wysyłająca wiadomość umożliwiającą akceptację zasad. Tylko dla administracji",
 		},
 		{
 			name: "createticket",
 			description:
 				"Komenda umożliwiająca na zgłoszenie buga w aplikacji bądź pomysłu na jej usprawnienie",
+		},
+		{
+			name: "sendrules",
+			description:
+				"Komenda wysyłająca na kanał aktualne zasady. Tylko dla administracji",
 		},
 	];
 	constructor() {
@@ -28,6 +33,10 @@ export class CommandsModel {
 				IntentsBitField.Flags.Guilds,
 				IntentsBitField.Flags.GuildMembers,
 				IntentsBitField.Flags.GuildMessageReactions,
+				IntentsBitField.Flags.GuildModeration,
+				IntentsBitField.Flags.MessageContent,
+				IntentsBitField.Flags.GuildIntegrations,
+				IntentsBitField.Flags.AutoModerationExecution,
 			],
 			partials: [
 				Partials.Reaction,

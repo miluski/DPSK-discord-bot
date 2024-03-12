@@ -15,6 +15,7 @@ import { AcceptRulesCommand } from "./commands/acceptRules";
 import { Message } from "./types/message";
 import { CreateTicketCommand } from "./commands/createTicket";
 import { TicketModal } from "./modals/ticketModal";
+import { SendRulesCommand } from "./commands/sendRules";
 
 export class CommandsController extends CommandsModel {
 	private selectedProblemType: string = "";
@@ -144,6 +145,13 @@ export class CommandsController extends CommandsModel {
 							ephemeral: true,
 					  });
 				break;
+			case "sendRules":
+				interaction.member.roles.cache.some((role: Role) =>
+					role.permissions.has("Administrator")
+				)
+					? new SendRulesCommand(interaction)
+					: null;
+				break;
 		}
 	}
 	private handleSelectOptionFromStringMenu(interaction: any): void {
@@ -185,8 +193,8 @@ export class CommandsController extends CommandsModel {
 						components: [ticketComponentsRow],
 					});
 					await thread.members.add("346735619889823744");
-					// await thread.members.add('525693901349060639');
-					// await thread.members.add('461227481366528030');
+					await thread.members.add("525693901349060639");
+					await thread.members.add("461227481366528030");
 					interaction.reply({ embeds: [finalEmbed] });
 				}
 			})();
@@ -292,10 +300,9 @@ export class CommandsController extends CommandsModel {
 		const embed = interaction.message.embeds[0];
 		const userId = interaction.message.embeds[0].data.footer.text;
 		const ticketSignature = interaction.message.embeds[0].data.title;
-		const description =
-			`**Opiekun zgłoszenia:**\n<@${interaction.user.id}>\n`.concat(
-				embed.data.description
-			).concat("\n\n");
+		const description = `**Opiekun zgłoszenia:**\n<@${interaction.user.id}>\n`
+			.concat(embed.data.description)
+			.concat("\n\n");
 		const editedEmbed = this.getResponseTicketEmbed(interaction, description);
 		let responseEmbed = this.getResponseTicketEmbed(interaction, "test");
 		if (interaction.customId === "confirm") {

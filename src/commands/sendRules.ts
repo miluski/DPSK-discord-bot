@@ -5,7 +5,7 @@ import {
 } from "discord.js";
 import { Rule } from "../types/rule";
 
-export class AcceptRulesCommand {
+export class SendRulesCommand {
 	private readonly interaction: CommandInteraction<CacheType>;
 	private readonly approveIconId: string = "<a:approve:1210951055245053973>";
 	private readonly rulesArray: Array<Rule> = [
@@ -41,11 +41,10 @@ export class AcceptRulesCommand {
 	}
 	private async execute(): Promise<void> {
 		const rulesEmbed = this.getRulesEmbed();
-		const message = await this.interaction.reply({
+		await this.interaction.reply({
 			embeds: [rulesEmbed],
 			fetchReply: true,
 		});
-		await message.react(this.approveIconId);
 	}
 	private getRulesEmbed(): EmbedBuilder {
 		const rulesText = new EmbedBuilder()
