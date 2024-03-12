@@ -145,12 +145,15 @@ export class CommandsController extends CommandsModel {
 							ephemeral: true,
 					  });
 				break;
-			case "sendRules":
+			case "sendrules":
 				interaction.member.roles.cache.some((role: Role) =>
 					role.permissions.has("Administrator")
 				)
 					? new SendRulesCommand(interaction)
-					: null;
+					: interaction.reply({
+							content: "Nie masz uprawnień do użycia tej komendy!",
+							ephemeral: true,
+					  });
 				break;
 		}
 	}
