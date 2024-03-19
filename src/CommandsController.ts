@@ -230,9 +230,11 @@ export class CommandsController extends CommandsModel {
 	private async handleSubmitModal(interaction: any): Promise<void> {
 		try {
 			const ticketNumber = this.getRandomString();
+			const problemDescription =
+				interaction.fields.getTextInputValue("problemDescription");
 			const embed = this.getPrivateMessageEmbed(interaction, ticketNumber);
 			const ticketEmbed = this.getTicketEmbed(interaction, ticketNumber);
-			const finalEmbed = this.getFinalReplyEmbed(interaction, ticketNumber);
+			const finalEmbed = this.getFinalReplyEmbed(interaction, ticketNumber, problemDescription);
 			const confirmButtom = this.getConfirmButton();
 			const declineButton = this.getDeclineButton();
 			const ticketComponentsRow = new ActionRowBuilder().addComponents(
@@ -388,7 +390,8 @@ export class CommandsController extends CommandsModel {
 	}
 	private getFinalReplyEmbed(
 		interaction: any,
-		ticketNumber: string
+		ticketNumber: string,
+		ticketContent: string
 	): EmbedBuilder {
 		try {
 			const { user, guild } = interaction;
@@ -397,7 +400,7 @@ export class CommandsController extends CommandsModel {
 			const userAvatar = user.avatarURL();
 			const embed = new EmbedBuilder()
 				.setDescription(
-					`Do systemu wpłynęło nowe zgłoszenie o sygnaturze:\n**Ticket-${interaction.user.username}-${ticketNumber}**`
+					`Do systemu wpłynęło nowe zgłoszenie o sygnaturze:\n**Ticket-${interaction.user.username}-${ticketNumber}**\n\n**Treść zgłoszenia**:${ticketContent}`
 				)
 				.setColor(0xff0000)
 				.setThumbnail(userAvatar)
