@@ -4,8 +4,9 @@
 DPSK discord bot is an application written in TypeScript and node.js technologies
 to facilitate communication with testers of the "DPSK Children day" application and to automate the process of accepting the test regulations. Bot is hosted on icehost.pl
 
+## Tech Stack
 
-
+**Backend:** TypeScript, Node.js, discord.js, express.js
 
 ## Run Locally
 
@@ -47,13 +48,6 @@ Start the server
 ![App Screenshot](https://github.com/miluski/DPSK-discord-bot/blob/main/img/Zrzut%20ekranu%202024-04-07%20102722.png)
 ![App Screenshot](https://github.com/miluski/DPSK-discord-bot/blob/main/img/Zrzut%20ekranu%202024-04-07%20102735.png)
 ![App Screenshot](https://github.com/miluski/DPSK-discord-bot/blob/main/img/Zrzut%20ekranu%202024-04-07%20102746.png)
-
-## Tech Stack
-
-- TypeScript ^5.3.3
-- Node.js v18.18.2
-- discord.js ^14.14.1
-- express ^4.18.2
 
 
 ## Authors
